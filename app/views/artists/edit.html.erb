@@ -1,0 +1,27 @@
+<h1>Editing Artist #<%= @artist.id %></h1>
+
+<%= form_tag(artist_url(@artist), method: 'patch') do %>
+  <div>
+    <%= label_tag :first_name %><br />
+    <%= text_field_tag :first_name, @artist.first_name %>
+  </div>
+
+  <div>
+    <%= label_tag :last_name %><br />
+    <%= text_field_tag :last_name, @artist.last_name %>
+  </div>
+
+  <div>
+    <%= label_tag :email %><br />
+    <%= text_field_tag :email, @artist.email %>
+  </div>
+
+  <div>
+    <%= label_tag :bio %><br />
+    <%= text_field_tag :bio, @artist.bio %>
+  </div>
+
+  <div>
+    <%= submit_tag "Update Artist" %>
+  </div>
+<% end %>
