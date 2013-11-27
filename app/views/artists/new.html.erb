@@ -1,27 +1,39 @@
-<h1>New Artist</h1>
+<div class="page-header">
+  <h1>New Artist</h1>
+</div>
 
-<%= form_tag(artists_url, method: 'post') do %>
-  <div>
-    <%= label_tag :first_name %><br />
-    <%= text_field_tag :first_name %>
+<%= form_tag(artists_url, method: 'post', class: 'form-horizontal') do %>
+  <div class="form-group">
+    <%= label_tag :first_name, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :first_name, nil, class: 'form-control' %>
+    </div>
   </div>
 
-  <div>
-    <%= label_tag :last_name %><br />
-    <%= text_field_tag :last_name %>
+  <div class="form-group">
+    <%= label_tag :last_name, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :last_name, nil, class: 'form-control' %>
+    </div>
   </div>
 
-  <div>
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email %>
+  <div class="form-group">
+    <%= label_tag :email, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :email, nil, class: 'form-control' %>
+    </div>
   </div>
 
-  <div>
-    <%= label_tag :bio %><br />
-    <%= text_field_tag :bio %>
+  <div class="form-group">
+    <%= label_tag :bio, nil, class: 'col-md-2 control-label' %>
+    <div class="col-md-6">
+      <%= text_field_tag :bio, nil, class: 'form-control' %>
+    </div>
   </div>
 
-  <div>
-    <%= submit_tag "Create Artist" %>
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-6">
+      <%= submit_tag "Create Artist", class: 'btn btn-primary' %>
+    </div>
   </div>
 <% end %>
