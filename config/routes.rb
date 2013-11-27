@@ -1,5 +1,7 @@
 FinalProjectV7::Application.routes.draw do
 
+  devise_for :artists
+  devise_for :buyers
   root 'ideas#index'
   
   # Routes for the Portfolio_image resource:
