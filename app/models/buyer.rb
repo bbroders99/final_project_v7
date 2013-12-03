@@ -5,5 +5,9 @@ class Buyer < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 	has_many :ideas
+
+	#validates :first_name, :presence => true
+	#validates :last_name, :presence => true
+
 	
 end

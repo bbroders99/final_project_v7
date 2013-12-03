@@ -38,16 +38,35 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#">About</a></li>
         <li><%= link_to("Ideas", "/ideas") %></li>
         <li><%= link_to("Buyers", "/buyers") %></li>
         <li><%= link_to("Artists", "/artists") %></li>
         <li><%= link_to("Bids", "/bids") %></li>
         <li><%= link_to("Idea Images", "/idea_images") %></li>
         <li><%= link_to("Portfolio Images", "/portfolio_images") %></li>
+        <% if buyer_signed_in? %>
+          <li><%= link_to current_buyer.email, edit_buyer_registration_path %></li>
+          <li><%= link_to "Logout Buyer", destroy_buyer_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Buyer sign up", new_buyer_registration_path %></li>
+          <li><%= link_to "Buyer login", new_buyer_session_path %></li>
+        <% end %> 
+
+        <% if artist_signed_in? %>
+          <li><%= link_to current_artist.email, edit_artist_registration_path %></li>
+          <li><%= link_to "Logout Artist", destroy_artist_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "Artist sign up", new_artist_registration_path %></li>
+          <li><%= link_to "Artist login", new_artist_session_path %></li>
+        <% end %>
+        <li><a href="#">About</a></li>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </nav>
+
+  <p>Artis: <%= current_artist %></p>
+  <p>Buyer: <%= current_buyer %></p>
 
   <div class="container">
     <% if notice.present? %>
