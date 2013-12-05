@@ -34,8 +34,8 @@
         <td><%= idea.size %></td>
         <td><%= idea.status %></td>
         <td><%= idea.rating %></td>
-        <td><%= idea.buyer_id %></td>
-        <td><%= idea.artist_id %></td>
+        <td><%= idea.buyer.full_name %></td>
+        <td><%= idea.artist.full_name %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, idea_url(idea), class: 'btn btn-primary' %></td>
         <td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_idea_url(idea), class: 'btn btn-warning' %></td>
         <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, idea_url(idea), method: 'delete', data: { confirm: "Do you really want to delete this idea?" }, class: 'btn btn-danger' %></td>

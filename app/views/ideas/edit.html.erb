@@ -34,7 +34,7 @@
   <div class="form-group">
     <%= label_tag :category, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= text_field_tag :category, @idea.category, class: 'form-control' %>
+      <%= select_tag :category, options_for_select([ "Painting", "Drawing" ], @idea.category), class: 'form-control' %>
     </div>
   </div>
 
@@ -48,7 +48,7 @@
   <div class="form-group">
     <%= label_tag :status, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= text_field_tag :status, @idea.status, class: 'form-control' %>
+      <%= select_tag :status, options_for_select([ "Open", "Done" ], @idea.status), class: 'form-control' %>
     </div>
   </div>
 

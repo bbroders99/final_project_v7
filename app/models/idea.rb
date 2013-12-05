@@ -6,4 +6,13 @@ class Idea < ActiveRecord::Base
 	has_many :idea_images
 	has_many :bids
 	
+	def artist
+		return Artist.find(artist_id)
+	end
+
+	def buyer
+		return Buyer.find(buyer_id)
+	end
+
+
 end
