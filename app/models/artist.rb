@@ -12,4 +12,8 @@ class Artist < ActiveRecord::Base
 	#validates :last_name, :presence => true
 	#validates :bio, :presence => true
 
+	def full_name
+    	return first_name + " " + last_name
+	end
+
 end

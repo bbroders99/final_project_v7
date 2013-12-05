@@ -1,5 +1,6 @@
 class IdeaImagesController < ApplicationController
 
+
   def index
     @idea_images = IdeaImage.all
   end
