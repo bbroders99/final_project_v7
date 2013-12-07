@@ -33,7 +33,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.find_by(id: params[:id])
     @artist.first_name = params[:first_name]
     @artist.last_name = params[:last_name]
-    @artist.email = params[:email]
+    @artist.email = current_artist.email
     @artist.bio = params[:bio]
 
     if @artist.save

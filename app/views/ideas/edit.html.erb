@@ -55,7 +55,7 @@
   <div class="form-group">
     <%= label_tag :rating, nil, class: 'col-md-2 control-label' %>
     <div class="col-md-6">
-      <%= number_field_tag :rating, @idea.rating, class: 'form-control' %>
+      <%= number_field_tag :rating, nil, :in => 1..10, class: 'form-control' %>
     </div>
   </div>
 

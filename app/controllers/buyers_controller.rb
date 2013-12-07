@@ -32,7 +32,7 @@ class BuyersController < ApplicationController
     @buyer = Buyer.find_by(id: params[:id])
     @buyer.first_name = params[:first_name]
     @buyer.last_name = params[:last_name]
-    @buyer.email = params[:email]
+    @buyer.email = current_buyer.email
 
     if @buyer.save
       redirect_to buyers_url, notice: "Buyer updated successfully."
