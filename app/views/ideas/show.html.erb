@@ -13,7 +13,7 @@
   <dd><%= @idea.description %></dd>
 
   <dt>Price</dt>
-  <dd><%= @idea.price.round(2) %></dd>
+  <dd><%= @idea.price %></dd>
 
   <dt>Category</dt>
   <dd><%= @idea.category %></dd>
@@ -31,7 +31,7 @@
   <dd><%= @idea.buyer.full_name %></dd>
 
   <dt>Artist</dt>
-  <dd><%= @idea.artist.full_name %></dd>
+  <dd><%= @idea.artist.first_name %> <%= @idea.artist.last_name %></dd>
 
 </dl>
 
@@ -68,6 +68,7 @@
       <th>Idea</th>
       <th>Artist</th>
       <th>Show Artist Profile</th>
+      <th>Rating</th>
       <th></th>
       <th></th>
     </tr>
@@ -77,11 +78,13 @@
     <% @idea.bids.each do |bid| %>
       <tr>
         <td><%= bid.idea.title %></td>
-        <td><%= bid.artist.full_name %></td>
+        <td><%= bid.artist.first_name %> <%= bid.artist.last_name %></td>
         <td><%= link_to '<i class="fa fa-search-plus"></i>'.html_safe, artist_url(bid.artist), class: 'btn btn-primary' %></td>
         <!--<td><%= link_to '<i class="fa fa-edit"></i>'.html_safe, edit_bid_url(bid), class: 'btn btn-warning' %></td> -->
         <!-- <td><%= link_to '<i class="fa fa-trash-o"></i>'.html_safe, bid_url(bid), method: 'delete', data: { confirm: "Do you really want to delete this bid?" }, class: 'btn btn-danger' %></td> -->
+        <td></td>
       </tr>
+
     <% end %>
   </tbody>
 

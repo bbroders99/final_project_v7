@@ -54,7 +54,7 @@ class IdeasController < ApplicationController
     @idea.size = params[:size]
     @idea.status = params[:status]
     @idea.rating = params[:rating]
-    @idea.buyer_id = params[:buyer_id]
+    @idea.buyer_id = current_buyer.id
     @idea.artist_id = params[:artist_id]
 
     if @idea.save
