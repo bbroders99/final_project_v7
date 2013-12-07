@@ -14,7 +14,7 @@ class BidsController < ApplicationController
   def create
     @bid = Bid.new
     @bid.idea_id = params[:idea_id]
-    @bid.artist_id = params[:artist_id]
+    @bid.artist_id = current_artist.id
 
     if @bid.save
       redirect_to bids_url, notice: "Bid created successfully."
