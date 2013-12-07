@@ -5,6 +5,8 @@ class Idea < ActiveRecord::Base
 
 	has_many :idea_images
 	has_many :bids
+
+	validates :buyer_id, :presence => true
 	
 	def artist
 		return Artist.find(artist_id)

@@ -13,7 +13,7 @@
   <dd><%= @idea.description %></dd>
 
   <dt>Price</dt>
-  <dd><%= @idea.price %></dd>
+  <dd><%= @idea.price.round(2) %></dd>
 
   <dt>Category</dt>
   <dd><%= @idea.category %></dd>
@@ -34,3 +34,5 @@
   <dd><%= @idea.artist.full_name %></dd>
 
 </dl>
+
+

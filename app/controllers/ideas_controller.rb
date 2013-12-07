@@ -1,7 +1,16 @@
 class IdeasController < ApplicationController
 
   def index
-    @ideas = Idea.all
+    if buyer_signed_in?
+      @ideas = current_buyer.ideas
+    elsif artist_signed_in?
+      @ideas = Idea.all
+    else 
+      @ideas = Idea.all
+    end
+
+    # @ideas = Idea.all
+    
   end
 
   def show
